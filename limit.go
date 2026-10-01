@@ -41,7 +41,7 @@ func limit(next http.Handler) http.Handler {
 
 func main() {
 	http.Handle("/", limit(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "Hello!")
+		fmt.Fprintln(w, "Above the world!")
 	})))
 	fmt.Println("Server running on :8080")
 	http.ListenAndServe(":8080", nil)
